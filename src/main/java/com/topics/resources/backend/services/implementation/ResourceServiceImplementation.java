@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.topics.resources.backend.entities.Resource;
 import com.topics.resources.backend.repositories.ResourceRepository;
+import com.topics.resources.backend.services.interfaces.ResourceServiceInterface;
 
 /**
  * Services to be used when handling resources
@@ -15,7 +16,7 @@ import com.topics.resources.backend.repositories.ResourceRepository;
  */
 
 @Service
-public class ResourceServiceImplementation {
+public class ResourceServiceImplementation implements ResourceServiceInterface {
 
 	private ResourceRepository resRepo;
 	
@@ -29,6 +30,7 @@ public class ResourceServiceImplementation {
 	 * @param newResource the new resource to add in the repository
 	 * @return the added new resource
 	 */
+	@Override
 	public Resource createResource(Resource newResource) {
 		return resRepo.save(newResource);
 	}
@@ -38,6 +40,7 @@ public class ResourceServiceImplementation {
 	 * @param resourceId the id for the resource to be found
 	 * @return the resource with the given id, null if no resource found
 	 */
+	@Override
 	public Resource findResourceById(long resourceId) {
 		return resRepo.findById(resourceId).get();
 	}
@@ -46,6 +49,7 @@ public class ResourceServiceImplementation {
 	 * Finds all the resources in the repository
 	 * @return a list with all the resources in the repository
 	 */
+	@Override
 	public List<Resource> findAllResources(){
 		return (List<Resource>) resRepo.findAll();
 	}
@@ -56,6 +60,7 @@ public class ResourceServiceImplementation {
 	 * @param editedResource the resource with the new information to be replaced in the repository
 	 * @return the edited resource, null if resource not found for the given id
 	 */
+	@Override
 	public Resource editResource(long resourceId, Resource editedResource) {
 		if(this.findResourceById(resourceId)!=null) {
 			Resource toEditResource = this.findResourceById(resourceId);
@@ -71,6 +76,7 @@ public class ResourceServiceImplementation {
 	 * Deletes a resource given its id
 	 * @param resourceId the id of the resource to be deleted
 	 */
+	@Override
 	public void deleteResource(long resourceId) {
 		resRepo.deleteById(resourceId);
 	}

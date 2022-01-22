@@ -16,7 +16,7 @@ import com.topics.resources.backend.services.interfaces.TopicServiceInterface;
  */
 
 @Service
-public class TopicServiceImplementation implements TopicServiceInterface{
+public class TopicServiceImplementation implements TopicServiceInterface {
 
 	private TopicRepository topRepo;
 
