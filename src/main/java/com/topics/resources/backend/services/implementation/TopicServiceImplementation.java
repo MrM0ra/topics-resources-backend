@@ -30,6 +30,7 @@ public class TopicServiceImplementation implements TopicServiceInterface{
 	 * @param topicId the id for the topic to look for
 	 * @return Topic that has the given id if found, otherwise null
 	 */
+	@Override
 	public Topic findTopicById(long topicId) {
 		if(topRepo.existsById(topicId)) {
 			return topRepo.findById(topicId).get();
@@ -42,6 +43,7 @@ public class TopicServiceImplementation implements TopicServiceInterface{
 	 * Creates a new Topic 
 	 * @return the new topic created
 	 */
+	@Override
 	public Topic createTopic(Topic topic) {
 		topRepo.save(topic);
 		return this.findTopicById(topic.getTopicId());
@@ -51,6 +53,7 @@ public class TopicServiceImplementation implements TopicServiceInterface{
 	 * Returns every existent topic 
 	 * @return All topics saved in the TopicRepository
 	 */
+	@Override
 	public List<Topic> findAllTopics(){
 		return (List<Topic>) topRepo.findAll();
 	}
@@ -61,6 +64,7 @@ public class TopicServiceImplementation implements TopicServiceInterface{
 	 * @param editedTopic topic with the new information
 	 * @return edited topic stored in the topic repository or null if no topic exists for the given id
 	 */
+	@Override
 	public Topic editTopic(long topicId, Topic editedTopic) {
 		if(this.findTopicById(topicId)!=null) {
 			Topic toEdit = this.findTopicById(topicId);
@@ -75,6 +79,7 @@ public class TopicServiceImplementation implements TopicServiceInterface{
 	 * Deletes a topic
 	 * @param topicId the id of the topic to be deleted
 	 */
+	@Override
 	public void deleteTopicById(long topicId) {
 		topRepo.deleteById(topicId);
 	}

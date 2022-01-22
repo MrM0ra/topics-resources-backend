@@ -40,11 +40,11 @@ public class Resource {
 		this.resourceName = resourceName;
 	}
 	
-	public String getTopicURL() {
+	public String getResourceURL() {
 		return resourceURL;
 	}
 
-	public void setTopicURL(String topicURL) {
+	public void setResourceURL(String topicURL) {
 		this.resourceURL = topicURL;
 	}
 
