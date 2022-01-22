@@ -20,6 +20,8 @@ public class Resource {
 	
 	private String resourceName;
 	
+	private String resourceURL;
+	
 	private long topicId;
 	
 	public long getResourceId() {
@@ -36,6 +38,14 @@ public class Resource {
 
 	public void setResourceName(String resourceName) {
 		this.resourceName = resourceName;
+	}
+	
+	public String getTopicURL() {
+		return resourceURL;
+	}
+
+	public void setTopicURL(String topicURL) {
+		this.resourceURL = topicURL;
 	}
 
 	public long getTopicId() {

@@ -21,13 +21,16 @@ public class Topic {
 	
 	private String topicDescription;
 	
-	private String topicURL;
+	private List<Long> resources;	
 	
-	private List<Long> resources;
+	public Topic() {
+		
+	}
+	
+	public Topic(String topicDescription) {
+		this.topicDescription = topicDescription;
+	}
 
-	
-	
-	
 	public long getTopicId() {
 		return topicId;
 	}
@@ -42,14 +45,6 @@ public class Topic {
 
 	public void setTopicDescription(String topicDescription) {
 		this.topicDescription = topicDescription;
-	}
-
-	public String getTopicURL() {
-		return topicURL;
-	}
-
-	public void setTopicURL(String topicURL) {
-		this.topicURL = topicURL;
 	}
 
 	public List<Long> getResources() {
