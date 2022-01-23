@@ -3,9 +3,11 @@ package com.topics.resources.backend.entities;
 import java.util.List;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 /**
  * Topic class for the db model
@@ -21,6 +23,7 @@ public class Topic {
 	
 	private String topicDescription;
 	
+	@OneToMany(targetEntity=Resource.class, mappedBy="resourceId", fetch=FetchType.EAGER)
 	private List<Long> resources;	
 	
 	public Topic() {
