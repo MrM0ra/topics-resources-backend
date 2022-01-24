@@ -23,7 +23,7 @@ public class Topic {
 	
 	private String topicDescription;
 	
-	@OneToMany(targetEntity=Resource.class, mappedBy="resourceId", fetch=FetchType.EAGER)
+	@OneToMany(targetEntity=Resource.class, mappedBy="topicId", fetch=FetchType.EAGER)
 	private List<Long> resources;	
 	
 	public Topic() {
@@ -56,6 +56,15 @@ public class Topic {
 
 	public void setResources(List<Long> resources) {
 		this.resources = resources;
+	}
+
+	public int getResourcesCount() {
+//		if(this.getResources()!=null) {
+//			return this.getResources().size();
+//		}else {
+//			return 0;
+//		}
+		return this.getResources()!=null ? this.getResources().size() : 0;
 	}
 	
 	

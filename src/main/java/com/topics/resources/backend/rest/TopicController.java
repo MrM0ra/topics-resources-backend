@@ -65,4 +65,12 @@ public class TopicController {
 		return topicService.editTopic(topicId, topic);
 	}
 	
+	/**
+	 * 
+	 * @return
+	 */
+	@GetMapping("/topics/top")
+	private List<Topic> getTopTopics() {
+		return topicService.topTopics();
+	}
 }

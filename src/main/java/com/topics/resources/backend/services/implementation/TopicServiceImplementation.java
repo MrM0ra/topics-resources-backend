@@ -1,6 +1,8 @@
 package com.topics.resources.backend.services.implementation;
 
+import java.util.Comparator;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -82,6 +84,15 @@ public class TopicServiceImplementation implements TopicServiceInterface {
 	@Override
 	public void deleteTopicById(long topicId) {
 		topRepo.deleteById(topicId);
+	}
+
+	/**
+	 * Returns every existent topic in a list ordered by the quantity of resources
+	 * @return All topics saved in the TopicRepository in a list ordered by the quantity of resources
+	 */
+	@Override
+	public List<Topic> topTopics() {
+		return this.findAllTopics().stream().sorted(Comparator.comparingInt(Topic::getResourcesCount).reversed()).collect(Collectors.toList());
 	}
 	
 }

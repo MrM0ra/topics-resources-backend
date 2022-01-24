@@ -11,5 +11,6 @@ public interface TopicServiceInterface {
 	public List<Topic> findAllTopics();
 	public Topic editTopic(long topicId, Topic editedTopic);
 	public void deleteTopicById(long topicId);
+	public List<Topic> topTopics();
 	
 }
