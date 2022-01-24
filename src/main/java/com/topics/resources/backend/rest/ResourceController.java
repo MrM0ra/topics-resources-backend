@@ -29,7 +29,7 @@ public class ResourceController {
 	 * Returns every single Resource on the db
 	 * @return all the resources in the db
 	 */
-	@GetMapping("/resource")
+	@GetMapping("/resources")
 	public List<Resource> getResources(){
 		return resourceService.findAllResources();
 	}
@@ -39,7 +39,7 @@ public class ResourceController {
 	 * @param resourceId the id of the Resource
 	 * @return Resource with the specific id, null if it doesn't exists
 	 */
-	@GetMapping("/resource/{resourceId}")
+	@GetMapping("/resources/{resourceId}")
 	public Resource getResource(@PathVariable long resourceId) {
 		return resourceService.findResourceById(resourceId);
 	}
