@@ -24,6 +24,17 @@ public class Resource {
 	
 	private long topicId;
 	
+	public Resource() {
+		
+	}
+	
+	public Resource(String resourceName, String resourceURL, long topicId) {
+		super();
+		this.resourceName = resourceName;
+		this.resourceURL = resourceURL;
+		this.topicId = topicId;
+	}
+
 	public long getResourceId() {
 		return resourceId;
 	}
