@@ -9,6 +9,7 @@ public interface ResourceServiceInterface {
 	public Resource createResource(Resource newResource);
 	public Resource findResourceById(long resourceId);
 	public List<Resource> findAllResources();
+	public List<Resource> findAllResourcesByOwnerId(String ownerId);
 	public Resource editResource(long resourceId, Resource editedResource);
 	public void deleteResource(long resourceId);
 	

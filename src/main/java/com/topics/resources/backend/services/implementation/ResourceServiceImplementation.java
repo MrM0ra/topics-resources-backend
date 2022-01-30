@@ -55,6 +55,16 @@ public class ResourceServiceImplementation implements ResourceServiceInterface {
 	}
 	
 	/**
+	 * Finds all the resources that has the specified ownerId
+	 * @param ownerId the id of the owner 
+	 * @return all the resources which ownerId's is the same as the one passed over
+	 */
+	@Override
+	public List<Resource> findAllResourcesByOwnerId(String ownerId){
+		return resRepo.findAllByOwnerId(ownerId);
+	}
+	
+	/**
 	 * Searchs a resource with the given id, if found, swaps its information with the one in editedResource
 	 * @param resourceId the id for the resource to search
 	 * @param editedResource the resource with the new information to be replaced in the repository

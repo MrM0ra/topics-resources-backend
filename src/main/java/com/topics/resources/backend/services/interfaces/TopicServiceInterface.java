@@ -9,6 +9,7 @@ public interface TopicServiceInterface {
 	public Topic findTopicById(long topicId);
 	public Topic createTopic(Topic topic);
 	public List<Topic> findAllTopics();
+	public List<Topic> findAllTopicsByOwnerId(String ownerId);
 	public Topic editTopic(long topicId, Topic editedTopic);
 	public void deleteTopicById(long topicId);
 	public List<Topic> topTopics();

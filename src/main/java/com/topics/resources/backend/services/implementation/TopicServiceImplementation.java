@@ -52,6 +52,16 @@ public class TopicServiceImplementation implements TopicServiceInterface {
 	}
 	
 	/**
+	 * Finds all the Topics that has the specified ownerId
+	 * @param ownerId the id of the owner 
+	 * @return all the topics which ownerId's is the same as the one passed over
+	 */
+	@Override
+	public List<Topic> findAllTopicsByOwnerId(String ownerId){
+		return topRepo.findAllByOwnerId(ownerId);
+	}
+	
+	/**
 	 * Returns every existent topic 
 	 * @return All topics saved in the TopicRepository
 	 */

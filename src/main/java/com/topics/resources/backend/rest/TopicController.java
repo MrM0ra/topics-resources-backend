@@ -3,6 +3,7 @@ package com.topics.resources.backend.rest;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -20,6 +21,7 @@ import com.topics.resources.backend.services.implementation.TopicServiceImplemen
  */
 
 @RestController
+@CrossOrigin
 public class TopicController {
 
 	@Autowired
@@ -32,6 +34,11 @@ public class TopicController {
 	@GetMapping("/topics")
 	private List<Topic> getTopics() {
 		return topicService.findAllTopics();
+	}
+	
+	@GetMapping("/topics/{ownerId}")
+	public List<Topic> getTopicsByOwnerId(@PathVariable String ownerId) {
+		return topicService.findAllTopicsByOwnerId(ownerId);
 	}
 	
 	/**

@@ -26,6 +26,8 @@ public class Topic {
 	@OneToMany(targetEntity=Resource.class, mappedBy="topicId", fetch=FetchType.EAGER)
 	private List<Long> resources;	
 	
+	private String ownerId;
+
 	public Topic() {
 		
 	}
@@ -34,6 +36,11 @@ public class Topic {
 		this.topicDescription = topicDescription;
 	}
 
+	public Topic(String topicDescription, String ownerId) {
+		this.topicDescription = topicDescription;
+		this.ownerId=ownerId;
+	}
+	
 	public long getTopicId() {
 		return topicId;
 	}
@@ -59,15 +66,16 @@ public class Topic {
 	}
 
 	public int getResourcesCount() {
-//		if(this.getResources()!=null) {
-//			return this.getResources().size();
-//		}else {
-//			return 0;
-//		}
 		return this.getResources()!=null ? this.getResources().size() : 0;
 	}
 	
-	
+	public String getOwnerId() {
+		return ownerId;
+	}
+
+	public void setOwnerId(String ownerId) {
+		this.ownerId = ownerId;
+	}
 	
 	
 	

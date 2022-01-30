@@ -44,6 +44,12 @@ public class ResourceController {
 		return resourceService.findResourceById(resourceId);
 	}
 	
+	
+	@GetMapping("/resources/{ownerId}")
+	public List<Resource> getResourceByOwnerId(@PathVariable String ownerId) {
+		return resourceService.findAllResourcesByOwnerId(ownerId);
+	}
+	
 	/**
 	 * Adds a new Resource to the db
 	 * @param resource the Resource to be added to the database

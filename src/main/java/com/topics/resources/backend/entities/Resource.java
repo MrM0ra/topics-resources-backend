@@ -24,6 +24,8 @@ public class Resource {
 	
 	private long topicId;
 	
+	private String ownerId;
+
 	public Resource() {
 		
 	}
@@ -34,7 +36,7 @@ public class Resource {
 		this.resourceURL = resourceURL;
 		this.topicId = topicId;
 	}
-
+	
 	public long getResourceId() {
 		return resourceId;
 	}
@@ -67,6 +69,12 @@ public class Resource {
 		this.topicId = topicId;
 	}
 	
-	
+	public String getOwnerId() {
+		return ownerId;
+	}
+
+	public void setOwnerId(String ownerId) {
+		this.ownerId = ownerId;
+	}
 	
 }
