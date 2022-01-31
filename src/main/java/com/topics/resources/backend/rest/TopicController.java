@@ -36,7 +36,7 @@ public class TopicController {
 		return topicService.findAllTopics();
 	}
 	
-	@GetMapping("/topics/{ownerId}")
+	@GetMapping("/topics/byUser/{ownerId}")
 	public List<Topic> getTopicsByOwnerId(@PathVariable String ownerId) {
 		return topicService.findAllTopicsByOwnerId(ownerId);
 	}

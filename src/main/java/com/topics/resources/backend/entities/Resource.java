@@ -37,6 +37,14 @@ public class Resource {
 		this.topicId = topicId;
 	}
 	
+	public Resource(String resourceName, String resourceURL, long topicId, String ownerId) {
+		super();
+		this.resourceName = resourceName;
+		this.resourceURL = resourceURL;
+		this.topicId = topicId;
+		this.ownerId=ownerId;
+	}
+	
 	public long getResourceId() {
 		return resourceId;
 	}

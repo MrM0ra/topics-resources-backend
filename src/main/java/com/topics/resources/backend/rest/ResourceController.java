@@ -3,6 +3,7 @@ package com.topics.resources.backend.rest;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -20,6 +21,7 @@ import com.topics.resources.backend.services.implementation.ResourceServiceImple
  */
 
 @RestController
+@CrossOrigin
 public class ResourceController {
 
 	@Autowired
@@ -45,7 +47,7 @@ public class ResourceController {
 	}
 	
 	
-	@GetMapping("/resources/{ownerId}")
+	@GetMapping("/resources/byUser/{ownerId}")
 	public List<Resource> getResourceByOwnerId(@PathVariable String ownerId) {
 		return resourceService.findAllResourcesByOwnerId(ownerId);
 	}
@@ -66,7 +68,7 @@ public class ResourceController {
 	 * @param resourceId the id of the Resource to be modified
 	 * @return the modified Resource, null if the id doesn't exists
 	 */
-	@PutMapping("resources/{resourceId}")
+	@PutMapping("/resources/{resourceId}")
 	public Resource editResource(@RequestBody Resource resource, @PathVariable long resourceId) {
 		return resourceService.editResource(resourceId, resource);
 	}

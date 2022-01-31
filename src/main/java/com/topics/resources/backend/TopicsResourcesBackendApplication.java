@@ -31,12 +31,12 @@ public class TopicsResourcesBackendApplication {
 	public CommandLineRunner dummy(/*UserrService uService, PersonRepository pRep, 
 			RoleeRepository rRep, PersonRoleRepository prolRep*/) {
 		return (args) -> {
-			topicService.createTopic(new Topic("Microservice with spring boot", "12345"));
+			topicService.createTopic(new Topic("Microservice with spring boot", "61f6b03b6b894fa18bb26695"));
 			topicService.createTopic(new Topic("Concurrency"));
-			topicService.createTopic(new Topic("Node JS"));
+			topicService.createTopic(new Topic("Node JS", "61f6b03b6b894fa18bb26695"));
 			topicService.createTopic(new Topic("REST"));
 			topicService.createTopic(new Topic("NoSQL"));
-			topicService.createTopic(new Topic("Angular", "12345"));
+			topicService.createTopic(new Topic("Angular", "61f6b03b6b894fa18bb26695"));
 			topicService.createTopic(new Topic("Testing"));
 			topicService.createTopic(new Topic("ORM"));
 			topicService.createTopic(new Topic("OAUTH"));
@@ -48,7 +48,7 @@ public class TopicsResourcesBackendApplication {
 			resourceService.createResource(new Resource("Concurrency patterns", "https://www.udemy.com/concurrency-patterns", 2));
 			resourceService.createResource(new Resource("Multithreadin-patterns-presentation", "https://www.udemy.com/multithreadin-patterns-presentation", 2));
 			
-			System.out.println(topicService.findAllTopicsByOwnerId("12345"));
+			System.out.println(topicService.findAllTopicsByOwnerId("61f6b03b6b894fa18bb26695"));
 		};
 	}
 	
